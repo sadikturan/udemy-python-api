@@ -1,0 +1,31 @@
+INFO 2025-10-16 11:51:25,572 autoreload Watching for file changes with StatReloader
+WARNING 2025-10-16 11:51:33,148 exceptions [product_details NotFound: {'detail': ErrorDetail(string='Product not found', code='not_found')}]
+Traceback (most recent call last):
+  File "C:\Users\sadikturan-PC\Desktop\django-api\products\services.py", line 14, in get_product_or_404
+    return Product.objects.get(pk=product_id)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\sadikturan-PC\Desktop\django-api\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\sadikturan-PC\Desktop\django-api\.venv\Lib\site-packages\django\db\models\query.py", line 633, in get
+    raise self.model.DoesNotExist(
+        "%s matching query does not exist." % self.model._meta.object_name
+    )
+products.models.Product.DoesNotExist: Product matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sadikturan-PC\Desktop\django-api\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\sadikturan-PC\Desktop\django-api\.venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "C:\Users\sadikturan-PC\Desktop\django-api\products\views.py", line 159, in product_details
+    product = get_product_or_404(pk)
+  File "C:\Users\sadikturan-PC\Desktop\django-api\products\services.py", line 16, in get_product_or_404
+    raise NotFound("Product not found")
+rest_framework.exceptions.NotFound: Product not found
+WARNING 2025-10-16 11:51:33,164 log Not Found: /api/products/15
+INFO 2025-10-16 11:53:13,914 autoreload C:\Users\sadikturan-PC\Desktop\django-api\users\views.py changed, reloading.
+INFO 2025-10-16 11:53:15,759 autoreload Watching for file changes with StatReloader
+INFO 2025-10-16 11:53:26,533 views User logged in: sadikturan
